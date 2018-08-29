@@ -1,0 +1,9 @@
+[x] make the forum work
+   make the register link bigger
+-   switch local auth from `username` to `email`
+-   remove github tag link in `login` template
+-   remove fork from github link
+-   deploy with docker-compose.yml 
+
+EXTRAS 
++ make a pod yaml and deploy it
