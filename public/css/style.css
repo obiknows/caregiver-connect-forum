@@ -287,7 +287,8 @@ ul {
   border-bottom: 2px solid white;
 }
 .social-buttons div span {
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: 800
 }
 .chat-message button, .room-create button, .controls a {
   font-family: "Roboto", sans-serif;
