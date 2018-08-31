@@ -158,9 +158,6 @@ And It doesn't go without saying, you need to monitor your application. [Winston
 
 On Heroku, you can monitor the logs by clicking on _More -> View Logs_ on the top left of your application dashboard.
 
-## Support <a name="support"></a>
-I've written this script in my free time during my studies. If you find it useful, please support the project by spreading the word.
-
 ## Contribute <a name="contribute"></a>
 
 Contribute by creating new issues, sending pull requests on Github or you can send an email at: omar.elgabry.93@gmail.com

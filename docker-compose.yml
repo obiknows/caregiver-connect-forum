@@ -15,7 +15,8 @@ services:
       - forum
     container_name: caregiver-redis
   caregiver-forum:
-    build: .
+    # untag if using this from github direct
+    # build: .
     image: obiknows/caregiver-connect-forum:v1
     ports:
       - "5000:3000"
