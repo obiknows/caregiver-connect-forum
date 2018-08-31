@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - forum
+    container_name: caregiver-mongo
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - forum
+    container_name: caregiver-redis
+  caregiver-forum:
+    build: .
+    image: obiknows/caregiver-connect-forum:v1
+    ports:
+      - "5000:3000"
+    networks:
+      - forum
+    container_name: caregiver-forum
+networks:
+  forum:

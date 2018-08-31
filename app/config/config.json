@@ -2,7 +2,7 @@
 	"db": {
 		"username": "",
 		"password": "",
-		"host": "127.0.0.1",
+		"host": "mongo",
 		"port": "27017",
 		"name": "mongo"
 	},
@@ -20,8 +20,8 @@
 		"profileFields": ["id", "displayName", "photos"]
 	},
 	"redis": {
-		"host": "127.0.0.1",
-		"port": 6379,
+		"host": "redis",
+		"port": "6379",
 		"password": ""
 	}
 }
