@@ -30,25 +30,35 @@ var init = function(){
 
 	// Plug-in Local Strategy
 	passport.use(new LocalStrategy(
-	  function(username, password, done) {
-	    User.findOne({ username: new RegExp(username, 'i'), socialId: null }, function(err, user) {
-	      if (err) { return done(err); }
+      function(username, password, done) {
+        User.findOne(
+          { username: new RegExp(username, "i"), socialId: null },
+          function(err, user) {
+            if (err) {
+              return done(err);
+            }
 
-	      if (!user) {
-	        return done(null, false, { message: 'Incorrect username or password.' });
-	      }
+            if (!user) {
+              return done(null, false, {
+                message: "Incorrect username or password."
+              });
+            }
 
-	      user.validatePassword(password, function(err, isMatch) {
-	        	if (err) { return done(err); }
-	        	if (!isMatch){
-	        		return done(null, false, { message: 'Incorrect username or password.' });
-	        	}
-	        	return done(null, user);
-	      });
-
-	    });
-	  }
-	));
+            user.validatePassword(password, function(err, isMatch) {
+              if (err) {
+                return done(err);
+              }
+              if (!isMatch) {
+                return done(null, false, {
+                  message: "Incorrect username or password."
+                });
+              }
+              return done(null, user);
+            });
+          }
+        );
+      }
+    ));
 
 	// In case of Facebook, tokenA is the access token, while tokenB is the refersh token.
 	// In case of Twitter, tokenA is the token, whilet tokenB is the tokenSecret.

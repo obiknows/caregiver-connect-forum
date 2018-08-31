@@ -28,7 +28,8 @@
 
         <div style="margin-top: 18px;">
             <form action="/register" class="register-form" method="post" >
-              <input type="text" name="username" placeholder="username" />
+              <!-- <input type="text" name="username" placeholder="username" /> -->
+              <input type="email" name="username" placeholder="email" />
               <input type="password" name="password" placeholder="password"/>
               <button type="submit">create</button>
               <p class="message">Already registered? <a href="#">Sign In</a></p>
@@ -39,7 +40,8 @@
               <% } %>
             </form>
             <form action="/login" class="login-form" method="post">
-              <input type="text" name="username" placeholder="username" />
+              <!-- <input type="text" name="username" placeholder="username" /> -->
+              <input type="email" name="username" placeholder="email" />
               <input type="password" name="password" placeholder="password"/>
               <button type="submit">login</button>
               <p class="message">Not registered? <a href="#">Create an account</a></p>
