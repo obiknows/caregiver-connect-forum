@@ -40,6 +40,24 @@ var addUser = function(room, socket, callback){
 }
 
 /**
+ * Updates a rooms messags and notifies users
+ *
+ */
+var updateMessages = function(roomId, room, message, callback){
+	
+	// Push a new connection object(i.e. {userId + socketId})
+	var msg = { roomId: roomId, username: message.username, content: message.content, date: (new Date(message.date)).toLocaleString() };
+
+	// get the messages array
+	// push to the array
+	// 
+	
+	room.messages.push(msg);
+	room.save(callback);
+}
+
+
+/**
  * Get all users in a room
  *
  */
@@ -121,12 +139,13 @@ var removeUser = function(socket, callback){
 	});
 }
 
-module.exports = { 
-	create, 
-	find, 
-	findOne, 
-	findById, 
-	addUser, 
-	getUsers, 
-	removeUser 
+module.exports = {
+  create,
+  find,
+  findOne,
+  findById,
+  addUser,
+  getUsers,
+  removeUser,
+  updateMessages
 };

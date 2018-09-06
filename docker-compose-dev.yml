@@ -15,9 +15,7 @@ services:
       - forum
     container_name: caregiver-redis
   caregiver-forum:
-    # UNCOMMENT below if using in orginal repo
-    # build: .  
-    image: obiknows/caregiver-connect-forum:v1
+    build: .
     ports:
       - "3000:3000"
     networks:

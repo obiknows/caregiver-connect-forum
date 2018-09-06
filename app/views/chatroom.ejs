@@ -31,6 +31,21 @@
         
         <div class="chat-history">
           <ul>
+            <!-- IF Messages SHOW EM, IF NOT, (Show empty state) -->
+            <% if(room.messages.length > 0) { %>
+              <!-- MESSAGE -->
+              <% room.messages.forEach(function(message) { %>
+                <li>
+                  <div class="message-data">
+                    <span class="message-data-name"><%= message.username %></span>
+                    <span class="message-data-time"><%= message.date %></span>
+                  </div>
+                  <div class="message my-message" dir="auto"><%= message.content %></div>
+                </li>
+              <% }); %>
+              <% } else { %>
+            
+                <% } %>
           </ul>
         </div> <!-- end chat-history -->
         

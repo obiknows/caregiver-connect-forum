@@ -104,7 +104,27 @@ var ioEvents = function(io) {
 			// As the new message will be added manually in 'main.js' file
 			// socket.emit('addMessage', message);
 			
+			// Add send the add message obj to the room
 			socket.broadcast.to(roomId).emit('addMessage', message);
+
+			// create a new message in MONGO model
+			Room.findById(roomId, function(err, room) {
+				// Update the message in Mongo
+				Room.updateMessages(roomId, room, message, function (err) {
+					if (err) throw err;
+
+					console.log('Added message to MONGO');
+					
+				})
+
+        // room-wide refresh (window.refresh) event? vs. socket sol'n
+				
+      });
+
+			// TODO
+			// make sure the message stays on reload (check msgs render on first page load)
+
+
 		});
 
 	});
