@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Caregiver Connect Center Chat</title>
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Tachyons -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
     <!-- Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121212505-1"></script>
@@ -22,13 +24,15 @@
     <div class="login-page">
       <div class="form">
         <div class="social-buttons">
-          <div><span>Login</span></div>
+          <h1 class="mt2 mb0 baskerville i fw1 f1">Caregiver Connect</h1>
+          <h2 class="mt2 mb0 f4 fw4 ttu tracked">Forum</h2>
+          <h2 class="b mt2 mb2 f6 fw4 ttu tracked">Login</h2>
         </div>
 
-        <div class="form-line"></div>
 
         <div style="margin-top: 18px;">
             <form action="/register" class="register-form" method="post" >
+              <h2 class="b mt2 mb3 f6 fw4 ttu tracked">Create An Account</h2>
               <!-- <input type="text" name="username" placeholder="username" /> -->
               <input type="email" name="username" placeholder="email" />
               <input type="password" name="password" placeholder="password"/>
@@ -65,7 +69,7 @@
     <% } %>
     <script>
         $('.message a').click(function(){
-            $('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
+            $('form, .social-buttons ').animate({height: "toggle", opacity: "toggle"}, "slow");
           });
     </script>
   </body>

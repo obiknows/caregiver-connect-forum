@@ -16,15 +16,21 @@ services:
     container_name: caregiver-redis
   caregiver-forum:
     # UNCOMMENT below if using in orginal repo
-    # build: .  
-    image: obiknows/caregiver-connect-forum:v1
+    build: .  
+    # image: obiknows/caregiver-connect-forum:v4
     ports:
       - "3000:3000"
     networks:
       - forum
-    # links:
-    #   - mongo
-    #   - redis
+    links:
+      - mongo
+      - redis
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:forum.caregiverconnectcenter.org"
+      - "traefik.basic.port=3000"
+      - "traefik.frontend.passHostHeader=true"
     container_name: caregiver-forum
 networks:
   forum:
